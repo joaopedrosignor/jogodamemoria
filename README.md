@@ -1,8 +1,14 @@
 Este projeto foi desenvolvido por:
-Gabriel Machado Lacerda                RM:556714   TURMA:1ESPW
+
+Gabriel Machado Lacerda                RM:556714   
+
 João Pedro Signor Avelar               RM:558375
+
 Roger Cardoso Ferreira                 RM:557230
+
 Vinicius Augusto Siqueira Gonçalves    RM:557065
+
+TURMA:1ESPW
 
 Jogo da Memória da Fórmula E
 Bem-vindo ao jogo da memória da Fórmula E! Este é um jogo simples onde o objetivo é encontrar todos os pares correspondentes de cartas. As cartas representam equipes da Fórmula E, e você deve lembrar suas posições para encontrar todos os pares.
