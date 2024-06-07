@@ -14,15 +14,23 @@ Jogo da Memória da Fórmula E
 Bem-vindo ao jogo da memória da Fórmula E! Este é um jogo simples onde o objetivo é encontrar todos os pares correspondentes de cartas. As cartas representam equipes da Fórmula E, e você deve lembrar suas posições para encontrar todos os pares.
 
 Funcionalidades
+
 Verificação de entradas numéricas.
+
 Verificação de valores entre 1 e 4 para garantir que as escolhas estejam dentro do tabuleiro.
+
 Impressão da tabela do jogo mostrando as cartas descobertas.
+
 Lógica para verificar se um par correspondente foi encontrado.
+
 Opção de reiniciar o jogo após encontrar todos os pares.
 
 Requisitos
+
 Para executar o jogo, você precisa de:
+
 Python 3.x instalado no seu sistema.
+
 Um terminal ou ambiente de desenvolvimento que permita a execução de scripts Python.
 
 Instruções de Uso
