@@ -13,7 +13,7 @@ TURMA:1ESPW
 Jogo da Memória da Fórmula E
 Bem-vindo ao jogo da memória da Fórmula E! Este é um jogo simples onde o objetivo é encontrar todos os pares correspondentes de cartas. As cartas representam equipes da Fórmula E, e você deve lembrar suas posições para encontrar todos os pares.
 
-Funcionalidades
+Funcionalidades:
 
 Verificação de entradas numéricas.
 
@@ -25,7 +25,7 @@ Lógica para verificar se um par correspondente foi encontrado.
 
 Opção de reiniciar o jogo após encontrar todos os pares.
 
-Requisitos
+Requisitos:
 
 Para executar o jogo, você precisa de:
 
@@ -33,28 +33,39 @@ Python 3.x instalado no seu sistema.
 
 Um terminal ou ambiente de desenvolvimento que permita a execução de scripts Python.
 
-Instruções de Uso
+Instruções de Uso:
 1. Clone o repositório ou copie o código para um arquivo Python (.py) no seu computador.
 2. Abra um terminal ou um ambiente de desenvolvimento Python.
 3. Navegue até o diretório onde o arquivo .py está localizado.
 4. Execute o arquivo com o comando: python nome_do_arquivo.py
 5. Siga as instruções que aparecerão na tela para jogar o jogo.
 
-Dependências
+Dependências:
+
 Este projeto não possui dependências externas. Todo o código é executado com bibliotecas padrão do Python.
 
-Informações Adicionais
+Informações Adicionais:
+
 Estrutura do Código
+
 O código está estruturado da seguinte forma:
+
 Função verificaValorNumerico(msg): Verifica se a entrada do usuário é numérica.
+
 Função verificaValorCerto(num, msg): Verifica se a entrada do usuário está entre 1 e 4.
+
 Função imprimirTabela(cartas_descobertas): Imprime a tabela do jogo com as cartas descobertas.
+
 Função inicioDoJogo(): Controla o fluxo principal do jogo.
+
 Função verificarCarta(linha, coluna): Devolve o valor da carta com base na linha e coluna.
+
 Função verificaIndice(lista, elemento): Verifica se um elemento está presente em uma lista.
+
 Função forcaOpcao(lista, msg): Obriga o usuário a escolher uma opção presente em uma lista.
 
-Regras do Jogo
+
+Regras do Jogo:
 1. Você será solicitado a escolher a linha e a coluna da primeira carta.
 2. Em seguida, será solicitado a escolher a linha e a coluna da segunda carta.
 3. Se as cartas formarem um par, elas permanecerão viradas para cima.
