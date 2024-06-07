@@ -13,6 +13,21 @@ def verificaValorCerto(num, msg):
         num = verificaValorNumerico(msg)
     return num
 
+# Tabela visual do jogo
+def imprimirTabela(cartas_descobertas):
+    print("Tabela do Jogo:")
+    print("-------------------------")
+    for i in range(4):
+        print("|", end=" ")
+        for j in range(4):
+            if (i,j) in cartas_descobertas:
+                carta = verificarCarta(i+1, j)
+                print(f"|{carta}|", end=" ")
+            else:
+                print("|     ?     |", end=" ")
+        print("|")
+    print("-------------------------")
+
 # Início do jogo
 def inicioDoJogo():
     # Cartas do jogo
@@ -20,23 +35,7 @@ def inicioDoJogo():
     segundaFileira = ['JAGUAR TCS RACING', 'NEOM MCLAREN FORMULA E TEAM', 'DS PENSKE', 'MAHINDRA RACING']
     terceiraFileira = ['MASERATI MSG RACING', 'NISSAN FORMULA E TEAM', 'NEOM MCLAREN FORMULA E TEAM', 'DS PENSKE']
     quartaFileira = ['ENVISION RACING', 'ERT FORMULA E TEAM', 'ENVISION RACING', 'ERT FORMULA E TEAM']
-    resposta = ['Continuar', 'Encerrar']
-    
-    # Tabela visual do jogo
-    def imprimirTabela(cartas_descobertas):
-        print("Tabela do Jogo:")
-        print("-------------------------")
-        for i in range(4):
-            print("|", end=" ")
-            for j in range(4):
-                if (i,j) in cartas_descobertas:
-                    carta = verificarCarta(i+1, j)
-                    print(f"|{carta}|", end=" ")
-                else:
-                    print("|     ?     |", end=" ")
-            print("|")
-        print("-------------------------")
-
+    resposta = ['Continuar', 'Encerrar']   
     # Declaração dos pares corretos e das cartas descobertas
     pares_corretos = 0
     cartas_descobertas = []
