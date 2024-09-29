@@ -64,7 +64,7 @@ Função verificaIndice(lista, elemento): Verifica se um elemento está presente
 
 Função forcaOpcao(lista, msg): Obriga o usuário a escolher uma opção presente em uma lista.
 
-SPRINT 3
+Com os conhecimentos adquiridos a partir do segundo semestre, para o SPRINT 3 acrescentamos as seguintes funções:
 
 Função salvar_resultado(nome, pontos): Salva o nome e a pontuação do jogador.
 
