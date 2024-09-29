@@ -64,6 +64,8 @@ Função verificaIndice(lista, elemento): Verifica se um elemento está presente
 
 Função forcaOpcao(lista, msg): Obriga o usuário a escolher uma opção presente em uma lista.
 
+SPRINT 3
+
 Função salvar_resultado(nome, pontos): Salva o nome e a pontuação do jogador.
 
 Função verifica_pontuacao(): Exibe o placar dos jogadores e suas pontuações
