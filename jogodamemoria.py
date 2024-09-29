@@ -1,3 +1,8 @@
+import json 
+from pathlib import Path
+
+
+
 # Verificação de valor numérico    
 def verificaValorNumerico(msg):
     elemento = input(msg)
@@ -29,7 +34,13 @@ def imprimirTabela(cartas_descobertas):
     print("-------------------------")
 
 # Início do jogo
+
+
+
 def inicioDoJogo():
+
+    nome_player = input("Para comerçarmos, digite seu nome: ")
+
     # Cartas do jogo
     primeiraFileira = ['MAHINDRA RACING', 'JAGUAR TCS RACING', 'MASERATI MSG RACING', 'NISSAN FORMULA E TEAM']
     segundaFileira = ['JAGUAR TCS RACING', 'NEOM MCLAREN FORMULA E TEAM', 'DS PENSKE', 'MAHINDRA RACING']
@@ -86,13 +97,17 @@ def inicioDoJogo():
             print("As cartas não formam um par correspondente.")
         imprimirTabela(cartas_descobertas)
     # Após o encontro de todos os pares
-    print("\nParabéns! Você encontrou todos os pares correspondentes.")
+    print("\nParabéns! Você encontrou todos os pares correspondentes. Sua pontuação foi de 8 pontos!")
+
     # Pede a resposta e obriga a digitar 'Continuar' ou 'Encerrar'
     continuar = forcaOpcao(resposta,"Deseja jogar novamente? (Continuar/Encerrar): ")
     if continuar == resposta[0]:
         inicioDoJogo()
     else:
-        print("Obrigado por jogar!")
+        salvar_resultado(nome_player, 8 )
+        print("Obrigado por jogar! Veja a tabela de pontuação abaixo!")
+        print("-" * 20)
+        verifica_pontuacao()
 
 # Função para devolver o elemento(valor) da carta através da linha e coluna(índice)
 def verificarCarta(linha, coluna):
@@ -126,6 +141,45 @@ def forcaOpcao(lista,msg):
         resp = input(msg)
     return resp
 
+def salvar_resultado(nome, pontos):
+
+
+    caminho_diretorio = Path(r'D:\PC Gamer\Desktop\Dev\Fiap\Python\ch2\jogodamemoria')
+
+    # Cria o diretório se não existir
+    if not caminho_diretorio.exists():
+        caminho_diretorio.mkdir(parents=True)
+
+    # Caminho completo do arquivo
+    caminho_arquivo = caminho_diretorio / 'Pontos.json'
+
+    # Dados do jogador
+    dados = {"nome": nome, "pontos": pontos}
+
+    # Se o arquivo já existe, abre para leitura e carrega os dados existentes
+    if caminho_arquivo.exists():
+        with open(caminho_arquivo, 'r') as arquivo:
+            try:
+                conteudo = json.load(arquivo)
+            except json.JSONDecodeError:
+                conteudo = []
+    else:
+        conteudo = []
+
+    # Adiciona o novo resultado
+    conteudo.append(dados)
+
+    # Salva os dados atualizados
+    with open(caminho_arquivo, 'w', encoding='utf-8') as arquivo:
+        json.dump(conteudo, arquivo, indent=4)
+
+def verifica_pontuacao():
+    with open ('Pontos.json', 'r') as arquivo:
+        dados = json.load(arquivo)
+
+    for jogador in dados:
+            print(f"Nome: {jogador['nome']}, Pontos: {jogador['pontos']}\n")
+        
 # Chamada para iniciar o jogo
 print("Bem-vindo ao jogo da memória da Fórmula E!!")
 inicioDoJogo()
