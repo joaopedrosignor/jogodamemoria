@@ -1,5 +1,4 @@
 import json 
-from pathlib import Path
 import os
 import time
 
@@ -111,6 +110,7 @@ def inicioDoJogo():
         print("-" * 20)
         time.sleep(1)
         verifica_pontuacao()
+        print("-" * 20)
 
 # Função para devolver o elemento(valor) da carta através da linha e coluna(índice)
 def verificarCarta(linha, coluna):
@@ -150,7 +150,7 @@ def salvar_resultado(nome, pontos):
     caminho_diretorio = os.getcwd()
 
     # Caminho completo do arquivo
-    caminho_arquivo = caminho_diretorio + '\Pontos.json'
+    caminho_arquivo = caminho_diretorio + '/Pontos.json'
 
     # Dados do jogador
     dados = {"nome": nome, "pontos": pontos}
@@ -174,7 +174,7 @@ def salvar_resultado(nome, pontos):
 
 def verifica_pontuacao():
     caminho_diretorio = os.getcwd()
-    caminho_arquivo = caminho_diretorio + '\Pontos.json'
+    caminho_arquivo = caminho_diretorio + '/Pontos.json'
     with open (caminho_arquivo, 'r') as arquivo:
         dados = json.load(arquivo)
 
