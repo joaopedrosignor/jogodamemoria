@@ -64,6 +64,10 @@ Função verificaIndice(lista, elemento): Verifica se um elemento está presente
 
 Função forcaOpcao(lista, msg): Obriga o usuário a escolher uma opção presente em uma lista.
 
+Função salvar_resultado(nome, pontos): Salva o nome e a pontuação do jogador.
+
+Função verifica_pontuacao(): exibe o placar dos jogadores e suas pontuações
+
 
 Regras do Jogo:
 1. Você será solicitado a escolher a linha e a coluna da primeira carta.
