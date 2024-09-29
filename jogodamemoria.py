@@ -1,5 +1,7 @@
 import json 
 from pathlib import Path
+import os
+import time
 
 
 
@@ -107,6 +109,7 @@ def inicioDoJogo():
         salvar_resultado(nome_player, 8 )
         print("Obrigado por jogar! Veja a tabela de pontuação abaixo!")
         print("-" * 20)
+        time.sleep(1)
         verifica_pontuacao()
 
 # Função para devolver o elemento(valor) da carta através da linha e coluna(índice)
@@ -143,21 +146,17 @@ def forcaOpcao(lista,msg):
 
 def salvar_resultado(nome, pontos):
 
-
-    caminho_diretorio = Path(r'D:\PC Gamer\Desktop\Dev\Fiap\Python\ch2\jogodamemoria')
-
-    # Cria o diretório se não existir
-    if not caminho_diretorio.exists():
-        caminho_diretorio.mkdir(parents=True)
+    
+    caminho_diretorio = os.getcwd()
 
     # Caminho completo do arquivo
-    caminho_arquivo = caminho_diretorio / 'Pontos.json'
+    caminho_arquivo = caminho_diretorio + '\Pontos.json'
 
     # Dados do jogador
     dados = {"nome": nome, "pontos": pontos}
 
     # Se o arquivo já existe, abre para leitura e carrega os dados existentes
-    if caminho_arquivo.exists():
+    if os.path.exists(caminho_arquivo):
         with open(caminho_arquivo, 'r') as arquivo:
             try:
                 conteudo = json.load(arquivo)
@@ -174,7 +173,9 @@ def salvar_resultado(nome, pontos):
         json.dump(conteudo, arquivo, indent=4)
 
 def verifica_pontuacao():
-    with open ('Pontos.json', 'r') as arquivo:
+    caminho_diretorio = os.getcwd()
+    caminho_arquivo = caminho_diretorio + '\Pontos.json'
+    with open (caminho_arquivo, 'r') as arquivo:
         dados = json.load(arquivo)
 
     for jogador in dados:
