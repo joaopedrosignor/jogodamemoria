@@ -66,7 +66,7 @@ Função forcaOpcao(lista, msg): Obriga o usuário a escolher uma opção presen
 
 Função salvar_resultado(nome, pontos): Salva o nome e a pontuação do jogador.
 
-Função verifica_pontuacao(): exibe o placar dos jogadores e suas pontuações
+Função verifica_pontuacao(): Exibe o placar dos jogadores e suas pontuações
 
 
 Regras do Jogo:
